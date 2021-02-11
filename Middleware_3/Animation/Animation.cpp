@@ -96,7 +96,7 @@ bool Animation::Sample(float dt, ozz::vector<SoaTransform>& localTrans)
 		{
 			//if (!mClips[i]->Sample(mClipControllers[i]->GetTimeRatio()))
 			ozz::span<SoaTransform> clipLocalTrans = ozz::make_span(mClipLocalTrans[i]);
-			if (!mClips[i]->Sample(mClipSamplingCaches[i], localTrans, mClipControllers[i]->GetTimeRatio()))
+			if (!mClips[i]->Sample(mClipSamplingCaches[i], clipLocalTrans, mClipControllers[i]->GetTimeRatio()))
 				return false;
 		}
 	}
